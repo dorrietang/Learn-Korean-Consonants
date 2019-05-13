@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+        <style>
+            .center {
+                margin: auto;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+
+            .fat {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .full-width {
+                width: 100%;
+            }
+
+            .spaced {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row spaced">
+                <div class="col-md-6 center">
+                    <div class="center-text full-width">Select which set of Korean consonants you would like to learn how to distinguish between.</div>
+                </div>
+            </div>
+            <div class="row spaced">
+                <div class="col-md-6 center">
+                    <button class="fat full-width" id="bp">b/p</button>
+                </div>
+            </div>
+            <div class="row spaced">
+                <div class="col-md-6 center">
+                    <button class="fat full-width" id="sj">s/sh/j/ch</button>
+                </div>
+            </div>
+            <div class="row spaced">
+                <div class="col-md-6 center">
+                    <button class="fat full-width" id="dt">d/t</button>
+                </div>
+            </div>
+            <div class="row spaced">
+                <div class="col-md-6 center">
+                    <button class="fat full-width" id="gk">g/k</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
