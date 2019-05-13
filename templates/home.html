@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         
@@ -7,6 +8,11 @@
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
         <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+        
+        <script>
+            var progress = {{progress|tojson}}
+        </script>
+        
         <style>
             .center {
                 margin: auto;
@@ -14,6 +20,10 @@
 
             .center-text {
                 text-align: center;
+            }
+
+            .completed {
+                color: rgb(40, 167, 69);
             }
 
             .fat {
@@ -25,6 +35,10 @@
                 width: 100%;
             }
 
+            .in-progress {
+                color: rgb(255, 193, 7);
+            }
+
             .spaced {
                 margin-top: 30px;
                 margin-bottom: 30px;
@@ -34,29 +48,37 @@
     <body>
         <div class="container">
             <div class="row spaced">
-                <div class="col-md-6 center">
+                <div class="col-md-12 center">
                     <div class="center-text full-width">Select which set of Korean consonants you would like to learn how to distinguish between.</div>
                 </div>
             </div>
             <div class="row spaced">
+                <div class="col-md-3"></div>
                 <div class="col-md-6 center">
-                    <button class="fat full-width" id="bp">b/p</button>
+                    <button type="button" class="btn btn-outline-secondary fat full-width" id="bp">ㅂ, ㅃ, ㅍ</button>
                 </div>
+                <div class="col-md-3 label"></div>
             </div>
             <div class="row spaced">
+                <div class="col-md-3"></div>
                 <div class="col-md-6 center">
-                    <button class="fat full-width" id="sj">s/sh/j/ch</button>
+                    <button type="button" class="btn btn-outline-secondary fat full-width" id="sj">ㅅ, ㅆ, ㅈ, ㅉ, ㅊ</button>
                 </div>
+                <div class="col-md-3 label"></div>
             </div>
             <div class="row spaced">
+                <div class="col-md-3"></div>
                 <div class="col-md-6 center">
-                    <button class="fat full-width" id="dt">d/t</button>
+                    <button type="button" class="btn btn-outline-secondary fat full-width" id="dt">ㄷ, ㄸ, ㅌ</button>
                 </div>
+                <div class="col-md-3 label"></div>
             </div>
             <div class="row spaced">
+                <div class="col-md-3"></div>
                 <div class="col-md-6 center">
-                    <button class="fat full-width" id="gk">g/k</button>
+                    <button type="button" class="btn btn-outline-secondary fat full-width" id="gk">ㄱ, ㄲ, ㅋ</button>
                 </div>
+                <div class="col-md-3 label"></div>
             </div>
         </div>
     </body>

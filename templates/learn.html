@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+        <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+
+        <script>
+            var data = {{data|tojson}}
+            var ling = {{ling|tojson}}
+        </script>
+
+        <style>
+            img {
+                width: 100%;
+            }
+
+            .border {
+                border-style: dotted;
+            }
+
+            .button {
+                background: none;
+                border-radius: 20px;
+                margin-right: 10px;
+            }
+
+            .button:focus {
+                outline: none;
+            }
+
+            .button:hover {
+                background-color: silver;
+            }
+
+            .center {
+                margin: auto;
+                text-align: center;
+            }
+
+            .content {
+                display:none;
+            }
+
+            .desc {
+                height: 30px;
+            }
+
+            .ling {
+                margin-left: 50px;
+                margin-bottom: 10px;
+            }
+
+            .info {
+                width: 20px;
+                height: 20px;
+                padding: 0px 0px;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 12px;
+                margin-left: 10px;
+                
+            }
+
+            .italic {
+                font-style: italic;
+            }
+
+            .meaning {
+                margin-top: 15px;
+            }
+
+            .meaning-text {
+                margin-right: 5px;
+            }
+
+            .pencil {
+                margin-bottom: 5px;
+                margin-right: 10px;
+                vertical-align: sub;
+            }
+
+            .play-icon {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .spaced {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .word-sound {
+                vertical-align: top;
+            }
+
+            #quiz {
+                margin-top: 40px;
+                margin-bottom: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
+            <button class="btn btn-outline-primary my-2 my-sm-0" id="home">Main Menu</button>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 center" id="content">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 center">
+                    <button class="btn btn-info" id="quiz"><i class="material-icons pencil">create</i><span class="test-text">I'm ready to test my progress!</span></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

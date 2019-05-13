@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+        
+        <script>
+            var questions = {{data|tojson}}
+        </script>
+        
+        <style>
+            label {
+                font-size: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .button {
+                background: none;
+                border-radius: 20px;
+                margin-left: 10px;
+                margin-right: 13px;
+            }
+
+            .button:focus {
+                outline: none;
+            }
+
+            .button:hover {
+                background-color: silver;
+            }
+
+            .center {
+                margin: auto;
+                text-align: center;
+            }
+
+            .spaced {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .content {
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
+            <div id="title">
+                <button class="btn btn-info" id="back"><  Back to Review</button>
+            </div>
+            <button class="btn btn-outline-primary my-2 my-sm-0" id="home">Main Menu</button>
+        </nav>
+
+        <div class="container">
+            <div class="center spaced">
+                Select the consonant that you hear in each question.
+            </div>
+            <div class="row">
+                <div class="col-md-4 center" id="quiz">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 center">
+                    <button class="btn btn-secondary" id="submit">Submit</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 center" id="results">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#enter").click(function(){              
+                    window.location='/home';
+                })
+            })
+        </script>
+        
+        <style>
+            .center {
+                margin: auto;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+
+            .fat {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .full-width {
+                width: 100%;
+            }
+
+            .spaced {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row spaced">
+                <div class="col-md-6 center">
+                    <div class="center-text full-width">Learning the Korean alphabet can be hard, since it is completely different in look and sound from the one we use in English. Some Korean consonants sound similar to English ones, but not quite. This app was built to help you learn how to distinguish between similar sounding Korean consonants!</div>
+                </div>
+            </div>
+            <div class="row spaced">
+                <div class="col-md-2 center">
+                    <button class="fat full-width" id="enter">Enter</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
