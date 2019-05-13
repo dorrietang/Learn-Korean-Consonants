@@ -89,10 +89,10 @@ $(document).ready(function(){
         $(this).siblings('.sound')[0].play()
     });
 
-    // $("#back").click(function(){  
-    //     var cur = String(window.location)
-    //     window.location = cur.substr(0, cur.lastIndexOf('/'))
-    // });
+    $("#back").click(function(){  
+        var cur = String(window.location)
+        window.location = cur.substr(0, cur.lastIndexOf('/'))
+    });
 
     $("#home").click(function(){              
         window.location='/home'
