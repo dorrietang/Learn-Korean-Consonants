@@ -8,7 +8,7 @@ function show_progress(){
         } else if (progress[section] == 2) {
             section_element.removeClass("btn-outline-secondary")
             section_element.addClass("btn-outline-success")
-            section_element.parent().siblings('.label').append($('<div class="completed">Completed</div>'))
+            section_element.parent().siblings('.label').append($('<div class="completed">Completed<button class="btn btn-success result" id="' + section + '-result"><i class="material-icons">assessment</i></button></div>'))
         }
     }
 }
@@ -61,5 +61,21 @@ $(document).ready(function(){
             in_progress("gk") 
         }                
         window.location='/gk';
+    })
+
+    $("#bp-result").click(function(){
+        window.location='/bp/result'
+    })
+
+    $("#sj-result").click(function(){
+        window.location='/sj/result'
+    })
+
+    $("#dt-result").click(function(){
+        window.location='/dt/result'
+    })
+
+    $("#gk-result").click(function(){
+        window.location='/gk/result'
     })
 })
