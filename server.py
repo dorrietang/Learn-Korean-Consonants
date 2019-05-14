@@ -421,7 +421,7 @@ data = {
    ]
 }
 
-questions = {
+quiz_data = {
    "bp": [
       {
          "question": "ㅃ.mp3",
@@ -430,7 +430,8 @@ questions = {
             "b": 'ㅃ',
             "c": 'ㅍ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       },
       {
          "question": "ㅂ.mp3",
@@ -439,7 +440,8 @@ questions = {
             "b": 'ㅃ',
             "c": 'ㅍ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       },
       {
          "question": "ㅃ.mp3",
@@ -448,7 +450,8 @@ questions = {
             "b": 'ㅃ',
             "c": 'ㅍ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       },
       {
          "question": "ㅍ.mp3",
@@ -457,7 +460,8 @@ questions = {
             "b": 'ㅃ',
             "c": 'ㅍ'
          },
-         "correctAnswer": 'c'
+         "correctAnswer": 'c',
+         "userAnswer": ''
       },
       {
          "question": "ㅂ.mp3",
@@ -466,7 +470,8 @@ questions = {
             "b": 'ㅃ',
             "c": 'ㅍ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       }
    ],
    "sj": [
@@ -479,7 +484,8 @@ questions = {
             "d": 'ㅉ',
             "e": 'ㅊ'
          },
-         "correctAnswer": 'c'
+         "correctAnswer": 'c',
+         "userAnswer": ''
       },
       {
          "question": "ㅅ.mp3",
@@ -490,7 +496,8 @@ questions = {
             "d": 'ㅉ',
             "e": 'ㅊ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       },
       {
          "question": "ㅉ.mp3",
@@ -501,7 +508,8 @@ questions = {
             "d": 'ㅉ',
             "e": 'ㅊ'
          },
-         "correctAnswer": 'd'
+         "correctAnswer": 'd',
+         "userAnswer": ''
       },
       {
          "question": "ㅊ.mp3",
@@ -512,7 +520,8 @@ questions = {
             "d": 'ㅉ',
             "e": 'ㅊ'
          },
-         "correctAnswer": 'e'
+         "correctAnswer": 'e',
+         "userAnswer": ''
       },
       {
          "question": "ㅆ.mp3",
@@ -523,7 +532,8 @@ questions = {
             "d": 'ㅉ',
             "e": 'ㅊ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       }
    ],
    "dt": [
@@ -534,7 +544,8 @@ questions = {
             "b": 'ㄸ',
             "c": 'ㅌ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       },
       {
          "question": "ㄷ.mp3",
@@ -543,7 +554,8 @@ questions = {
             "b": 'ㄸ',
             "c": 'ㅌ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       },
       {
          "question": "ㅌ.mp3",
@@ -552,7 +564,8 @@ questions = {
             "b": 'ㄸ',
             "c": 'ㅌ'
          },
-         "correctAnswer": 'c'
+         "correctAnswer": 'c',
+         "userAnswer": ''
       },
       {
          "question": "ㄷ.mp3",
@@ -561,7 +574,8 @@ questions = {
             "b": 'ㄸ',
             "c": 'ㅌ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       },
       {
          "question": "ㄸ.mp3",
@@ -570,7 +584,8 @@ questions = {
             "b": 'ㄸ',
             "c": 'ㅌ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       }
    ],
    "gk": [
@@ -581,7 +596,8 @@ questions = {
             "b": 'ㄲ',
             "c": 'ㅋ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       },
       {
          "question": "ㄲ.mp3",
@@ -590,7 +606,8 @@ questions = {
             "b": 'ㄲ',
             "c": 'ㅋ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       },
       {
          "question": "ㄱ.mp3",
@@ -599,7 +616,8 @@ questions = {
             "b": 'ㄲ',
             "c": 'ㅋ'
          },
-         "correctAnswer": 'a'
+         "correctAnswer": 'a',
+         "userAnswer": ''
       },
       {
          "question": "ㅋ.mp3",
@@ -608,7 +626,8 @@ questions = {
             "b": 'ㄲ',
             "c": 'ㅋ'
          },
-         "correctAnswer": 'c'
+         "correctAnswer": 'c',
+         "userAnswer": ''
       },
       {
          "question": "ㄲ.mp3",
@@ -617,7 +636,8 @@ questions = {
             "b": 'ㄲ',
             "c": 'ㅋ'
          },
-         "correctAnswer": 'b'
+         "correctAnswer": 'b',
+         "userAnswer": ''
       }
    ]
 }
@@ -650,7 +670,23 @@ def learn(cons=None):
 
 @app.route('/<cons>/quiz')
 def quiz(cons=None):
-   return render_template('quiz.html', data=questions[cons])
+   return render_template('quiz.html', data=quiz_data[cons])
+
+@app.route('/<cons>/result')
+def result(cons=None):
+   return render_template('result.html', data=quiz_data[cons])
+
+@app.route('/update_answers', methods=['POST'])
+def update_answers():
+   global quiz_data
+
+   json_data = request.get_json()
+   section = json_data["section"]
+   answers = json_data["answers"]
+   for i in range(len(answers)):
+      quiz_data[section][i]["userAnswer"] = answers[i]
+
+   return jsonify(quiz_data=quiz_data)
 
 @app.route('/update_progress', methods=['POST'])
 def update_progress():

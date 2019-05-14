@@ -55,14 +55,10 @@ function show_content(){
             var ex_row = $('<div class="row">')
             ex_row.append($('<audio class="sound" src="../static/audio/' + data[i]["examples"][j]["sound"] + '" preload="auto"></audio>'))
             ex_row.append($('<span class="desc"><button class="button"><i class="material-icons play-icon">play_arrow</i></button></span><span>"' + data[i]["examples"][j]["pronunciation"] + '"</span>'))
-            // if (data[i]["examples"][j]["meaning"] != "") {
-            //     ex_row.append($('<div class="ling">' + data[i]["examples"][j]["meaning"] + '</div>'))
-            // }
             ex_div_2.append(ex_row)
             if (data[i]["examples"][j]["meaning"] != "") {
                 ex_div_2.append($('<div class="row meaning">(<span class="italic meaning-text">meaning:</span><span>' + data[i]["examples"][j]["meaning"] + '</span>)</div>'))
             }
-            // ex_div_2.append()
             one_ex.append(ex_div_2)
 
             ex.append(one_ex)

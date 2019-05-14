@@ -1,7 +1,7 @@
 function show_navbar(){
     var title = ""
-    for (var key in questions[0]["answers"]) {
-        title += questions[0]["answers"][key] + "/"
+    for (var key in quiz[0]["answers"]) {
+        title += quiz[0]["answers"][key] + "/"
     }
     title = title.substring(0, title.length-1)
     title += ": Quiz"
@@ -11,20 +11,20 @@ function show_navbar(){
 function show_questions(){
     var output = []
 
-    for(var i = 0; i < questions.length; i++) {
+    for(var i = 0; i < quiz.length; i++) {
         var answers = []
 
-        for (letter in questions[i].answers) {
+        for (letter in quiz[i].answers) {
             answers.push(
                 '<label class="btn btn-outline-secondary option">'
                     + '<input type="radio" class="question'+i+'" value="'+letter+'">'
-                    + questions[i].answers[letter]
+                    + quiz[i].answers[letter]
                 + '</label>'
             )
         }
 
         output.push(
-            '<div class="row spaced">' + (i+1) + '. <audio class="sound" src="../static/audio/' + questions[i].question + '" preload="auto"></audio>'
+            '<div class="row spaced">' + (i+1) + '. <audio class="sound" src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'
             + '<button class="button"><i class="material-icons">play_arrow</i></button>'
             + '<div class="btn-group btn-group-toggle answers" data-toggle="buttons">' + answers.join('') + '</div></div>'
         )
@@ -33,24 +33,29 @@ function show_questions(){
     $("#quiz").html(output.join(''))
 }
 
-function show_results(){
-    var numCorrect = 0
-    
+function save_answers(section){
+    var answers = []
     $('.answers').each(function(i) {
-        $(this).children('.option').removeClass('btn-outline-secondary')
-        $(this).children('.option').removeClass('btn-outline-success')
-        $(this).children('.option').removeClass('btn-outline-danger')
-
         var userAnswer = $('input[class=question'+i+']:checked').val()
-        if (userAnswer === questions[i].correctAnswer) {
-            numCorrect++
-            $(this).children('.option').addClass('btn-outline-success')
-        } else {
-            $(this).children('.option').addClass('btn-outline-danger')
+        answers.push(userAnswer)
+    });
+    var update = {"section": section, "answers": answers}
+    $.ajax({
+        type: "POST",
+        url: "/update_answers",                
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(update),
+        success: function(result){
+            quiz = result["quiz_data"][section]
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
         }
     });
-
-    $("#results").html('You answered ' + numCorrect + ' out of ' + questions.length + ' correctly.')
 }
 
 function completed(section) {
@@ -99,7 +104,9 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
-        show_results()
-        completed(String(window.location).split("/")[3])
+        var section = String(window.location).split("/")[3]
+        save_answers(section)
+        completed(section)
+        window.location='./result'
     })
 })

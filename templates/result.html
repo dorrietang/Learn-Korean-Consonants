@@ -7,29 +7,31 @@
         <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    
-        <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
 
+        <script type="text/javascript" src="{{ url_for('static', filename = 'result.js') }}"></script>
+        
         <script>
-            var data = {{data|tojson}}
-            var ling = {{ling|tojson}}
+            var quiz = {{data|tojson}}
         </script>
-
+        
         <style>
-            img {
-                width: 100%;
+            label {
+                font-size: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
             }
 
-            .border {
-                border-style: dotted;
+            .btn-wrapper {
+                height: 30px;
             }
 
             .button {
                 background: none;
                 border-radius: 20px;
-                margin-right: 10px;
+                margin-left: 10px;
+                margin-right: 13px;
             }
 
             .button:focus {
@@ -45,63 +47,23 @@
                 text-align: center;
             }
 
-            .content {
-                display:none;
-            }
-
-            .desc {
-                height: 30px;
-            }
-
-            .ling {
-                margin-left: 50px;
-                margin-bottom: 10px;
-            }
-
-            .info {
-                width: 20px;
-                height: 20px;
-                padding: 0px 0px;
-                border-radius: 10px;
-                text-align: center;
-                font-size: 12px;
-                margin-left: 10px;
-                
-            }
-
-            .italic {
-                font-style: italic;
-            }
-
-            .meaning {
-                margin-top: 15px;
-            }
-
-            .meaning-text {
-                margin-right: 5px;
-            }
-
-            .pencil {
+            .icon {
                 margin-bottom: 5px;
                 margin-right: 10px;
                 vertical-align: sub;
             }
 
-            .play-icon {
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-            .spaced {
+            .large-spaced {
                 margin-top: 30px;
                 margin-bottom: 30px;
             }
 
-            .word-sound {
-                vertical-align: top;
+            .small-spaced {
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
 
-            #quiz {
+            #redo {
                 margin-top: 40px;
                 margin-bottom: 100px;
             }
@@ -109,20 +71,26 @@
     </head>
     <body>
         <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
+            <div id="title">
+                <button class="btn btn-info" id="back"><  Back to Review</button>
+            </div>
             <button class="btn btn-outline-primary my-2 my-sm-0" id="home">Main Menu</button>
         </nav>
+
         <div class="container">
             <div class="row">
-                <div class="col-md-6 center" id="content">
+                <div class="col-md-8 center large-spaced" id="results">
 
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 center" id="next">
-                    <button class="btn" id="quiz"><i class="material-icons pencil">create</i><span class="test-text">I'm ready to test my progress!</span></button>
+                <div class="col-md-8 center">
+                    <button class="btn btn-outline-secondary" id="redo"><i class="material-icons icon">replay</i><span class="test-text">Reset & Take this quiz again</span></button>
                 </div>
             </div>
         </div>
     </body>
 </html>
+
+
 
