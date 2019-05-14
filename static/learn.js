@@ -12,15 +12,14 @@ function get_ling(desc){
 }
 
 function show_navbar(){
-    var title = "";
+    var title = "Learn: "
     for (var i = 0; i < data.length; i++) {
         title += data[i]["consonant"]
         if (i < data.length-1) {
             title += "/"
         }
     }
-    title += ": Learn"
-    $('.navbar').prepend($('<a class="navbar-brand">' + title + '</a>'))
+    $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
 }
 
 function show_content(has_results){

@@ -51,11 +51,16 @@
         </style>
     </head>
     <body>
-        <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
-            <div id="title">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#warningModalBack"><  Back to Review</button>
+        <nav class="navbar sticky-top navbar-light bg-light">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-left">
+                <div id="title">
+
+                </div>
             </div>
-            <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#warningModalHome">Main Menu</button>
+            <div class="col-md-3 text-right">
+                <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#warningModalHome"><i class="material-icons">home</i></button>
+            </div>
         </nav>
           
         <div class="modal fade" id="warningModalBack" tabindex="-1" role="dialog" aria-labelledby="warningModalBackLabel" aria-hidden="true">
@@ -100,7 +105,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center spaced-vert">
+                <div class="col-md-2 text-right spaced-vert">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#warningModalBack"><  Back to Review</button>
+                </div>
+                <div class="col-md-8 text-center spaced-vert">
                     Select the consonant that you hear in each question.
                 </div>
             </div>

@@ -3,8 +3,7 @@ function show_navbar(){
     for (var key in quiz[0]["answers"]) {
         title += quiz[0]["answers"][key] + "/"
     }
-    title = title.substring(0, title.length-1)
-    title += ": Quiz"
+    title = "Quiz: " + title.substring(0, title.length-1)
     $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
 }
 

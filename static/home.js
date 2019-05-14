@@ -8,7 +8,7 @@ function show_progress(){
         } else if (progress[section] == 2) {
             section_element.removeClass("btn-outline-secondary")
             section_element.addClass("btn-outline-success")
-            section_element.parent().siblings('.label').append($('<div class="completed">Completed<button class="btn btn-success result" id="' + section + '-result"><i class="material-icons">assessment</i></button></div>'))
+            section_element.parent().siblings('.label').append($('<div class="completed">Completed<button class="btn btn-success result" id="' + section + '-result" title="Review quiz result"><i class="material-icons">assessment</i></button></div>'))
         }
     }
 }

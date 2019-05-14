@@ -24,8 +24,8 @@
             }
 
             .large-spaced {
-                margin-top: 30px;
-                margin-bottom: 30px;
+                margin-top: 25px;
+                margin-bottom: 25px;
             }
 
             .play-button {
@@ -62,16 +62,23 @@
         </style>
     </head>
     <body>
-        <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
-            <div id="title">
-                <button class="btn btn-info" id="back"><  Back to Review</button>
+        <nav class="navbar sticky-top navbar-light bg-light">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-left">
+                <div id="title">
+
+                </div>
             </div>
-            <button class="btn btn-outline-primary my-2 my-sm-0" id="home">Main Menu</button>
+            <div class="col-md-3 text-right">
+                <button class="btn btn-outline-primary my-2 my-sm-0" id="home"><i class="material-icons">home</i></button>
+            </div>
         </nav>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
+                <div class="col-md-2 text-right large-spaced">
+                    <button class="btn btn-info" id="back"><  Back to Review</button>
+                </div>
                 <div class="col-md-8 text-center large-spaced" id="results">
 
                 </div>
