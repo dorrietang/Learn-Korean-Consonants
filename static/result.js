@@ -1,10 +1,5 @@
-function show_navbar(){
-    var title = ""
-    for (var key in quiz[0]["answers"]) {
-        title += quiz[0]["answers"][key] + "/"
-    }
-    title = "Quiz Results: " + title.substring(0, title.length-1)
-    $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
+function show_title(section){
+    $('#title').append($('<a class="navbar-brand">Quiz Results: ' + info[section]["slash"] + '</a>'))
 }
 
 function clear_answers(section){
@@ -31,7 +26,7 @@ function clear_answers(section){
     });
 }
 
-function show_results(){
+function show_results(section){
     var numCorrect = 0
     
     for (var i = 0; i < quiz.length; i++) {
@@ -43,10 +38,10 @@ function show_results(){
             if (quiz[i].userAnswer == null) {
                 q_info.append($('<div class="col-md-2">(blank)</div>'))
             } else {
-                q_info.append($('<div class="col-md-2">' + quiz[i]["answers"][quiz[i].userAnswer] + '</div>'))
+                q_info.append($('<div class="col-md-2">' + info[section]["options"][quiz[i].userAnswer] + '</div>'))
             }
             q_info.append($('<div class="col-md-3">Correct answer: </div>'))
-            q_info.append($('<div class="col-md-2">' + quiz[i]["answers"][quiz[i].correctAnswer] + '</div>'))
+            q_info.append($('<div class="col-md-2">' + info[section]["options"][quiz[i].correctAnswer] + '</div>'))
             $("#results").append(q_info)
         }
 
@@ -88,8 +83,9 @@ function reset(section) {
 }
 
 $(document).ready(function(){
-    show_navbar()
-    show_results()
+    var section = String(window.location).split("/")[3]
+    show_title(section)
+    show_results(section)
 
     $(".play-button").click(function(){
         $(this).parent().siblings('audio')[0].play()
@@ -105,7 +101,6 @@ $(document).ready(function(){
     });
 
     $("#redo").click(function(){
-        var section = String(window.location).split("/")[3]
         clear_answers(section)
         reset(section)
         window.location="./quiz"

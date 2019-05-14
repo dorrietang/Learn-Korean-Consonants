@@ -1,23 +1,18 @@
-function show_navbar(){
-    var title = ""
-    for (var key in quiz[0]["answers"]) {
-        title += quiz[0]["answers"][key] + "/"
-    }
-    title = "Quiz: " + title.substring(0, title.length-1)
-    $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
+function show_title(section){
+    $('#title').append($('<a class="navbar-brand">Quiz: ' + info[section]["slash"] + '</a>'))
 }
 
-function show_questions(){
+function show_questions(section){
     var output = []
 
     for(var i = 0; i < quiz.length; i++) {
         var answers = []
 
-        for (letter in quiz[i].answers) {
+        for (letter in info[section]["options"]) {
             answers.push(
                 '<label class="btn btn-outline-secondary">'
                     + '<input type="radio" class="question'+i+'" value="'+letter+'">'
-                    + quiz[i].answers[letter]
+                    + info[section]["options"][letter]
                 + '</label>'
             )
         }
@@ -77,8 +72,9 @@ function completed(section) {
 }
 
 $(document).ready(function(){
-    show_navbar()
-    show_questions()
+    var section = String(window.location).split("/")[3]
+    show_title(section)
+    show_questions(section)
 
     $("input").click(function(){
         $(this).prop('checked',true)
@@ -103,7 +99,6 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
-        var section = String(window.location).split("/")[3]
         save_answers(section)
         completed(section)
         window.location='./result'

@@ -11,6 +11,51 @@ progress = {
    "gk": 0
 }
 
+info = {
+   "bp": {
+      "slash": "ㅂ/ㅃ/ㅍ",
+      "comma": "ㅂ, ㅃ, ㅍ",
+      "romanized": "b, p",
+      "options": {
+         "a": 'ㅂ',
+         "b": 'ㅃ',
+         "c": 'ㅍ'
+      }
+   },
+   "sj": {
+      "slash": "ㅅ/ㅆ/ㅈ/ㅉ/ㅊ",
+      "comma": "ㅅ, ㅆ, ㅈ, ㅉ, ㅊ",
+      "romanized": "s, j",
+      "options": {
+         "a": 'ㅅ',
+         "b": 'ㅆ',
+         "c": 'ㅈ',
+         "d": 'ㅉ',
+         "e": 'ㅊ'
+      }
+   },
+   "dt": {
+      "slash": "ㄷ/ㄸ/ㅌ",
+      "comma": "ㄷ, ㄸ, ㅌ",
+      "romanized": "d, t",
+      "options": {
+         "a": 'ㄷ',
+         "b": 'ㄸ',
+         "c": 'ㅌ'
+      }
+   },
+   "gk": {
+      "slash": "ㄱ/ㄲ/ㅋ",
+      "comma": "ㄱ, ㄲ, ㅋ",
+      "romanized": "g, k",
+      "options": {
+         "a": 'ㄱ',
+         "b": 'ㄲ',
+         "c": 'ㅋ'
+      }
+   }
+}
+
 data = {
    "bp": [
       {
@@ -425,51 +470,26 @@ quiz_data = {
    "bp": [
       {
          "question": "ㅃ.mp3",
-         "answers": {
-            "a": 'ㅂ',
-            "b": 'ㅃ',
-            "c": 'ㅍ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       },
       {
          "question": "ㅂ.mp3",
-         "answers": {
-            "a": 'ㅂ',
-            "b": 'ㅃ',
-            "c": 'ㅍ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       },
       {
          "question": "ㅃ.mp3",
-         "answers": {
-            "a": 'ㅂ',
-            "b": 'ㅃ',
-            "c": 'ㅍ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       },
       {
          "question": "ㅍ.mp3",
-         "answers": {
-            "a": 'ㅂ',
-            "b": 'ㅃ',
-            "c": 'ㅍ'
-         },
          "correctAnswer": 'c',
          "userAnswer": ''
       },
       {
          "question": "ㅂ.mp3",
-         "answers": {
-            "a": 'ㅂ',
-            "b": 'ㅃ',
-            "c": 'ㅍ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       }
@@ -477,61 +497,26 @@ quiz_data = {
    "sj": [
       {
          "question": "ㅈ.mp3",
-         "answers": {
-            "a": 'ㅅ',
-            "b": 'ㅆ',
-            "c": 'ㅈ',
-            "d": 'ㅉ',
-            "e": 'ㅊ'
-         },
          "correctAnswer": 'c',
          "userAnswer": ''
       },
       {
          "question": "ㅅ.mp3",
-         "answers": {
-            "a": 'ㅅ',
-            "b": 'ㅆ',
-            "c": 'ㅈ',
-            "d": 'ㅉ',
-            "e": 'ㅊ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       },
       {
          "question": "ㅉ.mp3",
-         "answers": {
-            "a": 'ㅅ',
-            "b": 'ㅆ',
-            "c": 'ㅈ',
-            "d": 'ㅉ',
-            "e": 'ㅊ'
-         },
          "correctAnswer": 'd',
          "userAnswer": ''
       },
       {
          "question": "ㅊ.mp3",
-         "answers": {
-            "a": 'ㅅ',
-            "b": 'ㅆ',
-            "c": 'ㅈ',
-            "d": 'ㅉ',
-            "e": 'ㅊ'
-         },
          "correctAnswer": 'e',
          "userAnswer": ''
       },
       {
          "question": "ㅆ.mp3",
-         "answers": {
-            "a": 'ㅅ',
-            "b": 'ㅆ',
-            "c": 'ㅈ',
-            "d": 'ㅉ',
-            "e": 'ㅊ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       }
@@ -539,51 +524,26 @@ quiz_data = {
    "dt": [
       {
          "question": "ㄸ.mp3",
-         "answers": {
-            "a": 'ㄷ',
-            "b": 'ㄸ',
-            "c": 'ㅌ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       },
       {
          "question": "ㄷ.mp3",
-         "answers": {
-            "a": 'ㄷ',
-            "b": 'ㄸ',
-            "c": 'ㅌ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       },
       {
          "question": "ㅌ.mp3",
-         "answers": {
-            "a": 'ㄷ',
-            "b": 'ㄸ',
-            "c": 'ㅌ'
-         },
          "correctAnswer": 'c',
          "userAnswer": ''
       },
       {
          "question": "ㄷ.mp3",
-         "answers": {
-            "a": 'ㄷ',
-            "b": 'ㄸ',
-            "c": 'ㅌ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       },
       {
          "question": "ㄸ.mp3",
-         "answers": {
-            "a": 'ㄷ',
-            "b": 'ㄸ',
-            "c": 'ㅌ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       }
@@ -591,51 +551,26 @@ quiz_data = {
    "gk": [
       {
          "question": "ㄱ.mp3",
-         "answers": {
-            "a": 'ㄱ',
-            "b": 'ㄲ',
-            "c": 'ㅋ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       },
       {
          "question": "ㄲ.mp3",
-         "answers": {
-            "a": 'ㄱ',
-            "b": 'ㄲ',
-            "c": 'ㅋ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       },
       {
          "question": "ㄱ.mp3",
-         "answers": {
-            "a": 'ㄱ',
-            "b": 'ㄲ',
-            "c": 'ㅋ'
-         },
          "correctAnswer": 'a',
          "userAnswer": ''
       },
       {
          "question": "ㅋ.mp3",
-         "answers": {
-            "a": 'ㄱ',
-            "b": 'ㄲ',
-            "c": 'ㅋ'
-         },
          "correctAnswer": 'c',
          "userAnswer": ''
       },
       {
          "question": "ㄲ.mp3",
-         "answers": {
-            "a": 'ㄱ',
-            "b": 'ㄲ',
-            "c": 'ㅋ'
-         },
          "correctAnswer": 'b',
          "userAnswer": ''
       }
@@ -662,19 +597,19 @@ def landing():
 
 @app.route('/home')
 def home():
-   return render_template('home.html', progress=progress)
+   return render_template('home.html', progress=progress, info=info)
 
 @app.route('/<cons>')
 def learn(cons=None):
-   return render_template('learn.html', progress=progress, data=data[cons], ling=ling_defs)
+   return render_template('learn.html', progress=progress, info=info, data=data[cons], ling=ling_defs)
 
 @app.route('/<cons>/quiz')
 def quiz(cons=None):
-   return render_template('quiz.html', data=quiz_data[cons])
+   return render_template('quiz.html', info=info, data=quiz_data[cons])
 
 @app.route('/<cons>/result')
 def result(cons=None):
-   return render_template('result.html', data=quiz_data[cons])
+   return render_template('result.html', info=info, data=quiz_data[cons])
 
 @app.route('/update_answers', methods=['POST'])
 def update_answers():

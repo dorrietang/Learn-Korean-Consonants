@@ -14,6 +14,7 @@
         <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
         
         <script>
+            var info = {{info|tojson}}
             var progress = {{progress|tojson}}
         </script>
         
@@ -44,16 +45,15 @@
                 margin-top: 30px;
                 margin-bottom: 30px;
             }
-
-            #home:focus {
-                outline: none;
-            }
         </style>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-light bg-light">
-            <div class="col-md-12 text-right">
-                <button class="btn btn-outline-primary my-2 my-sm-0" id="home"><i class="material-icons">home</i></button>
+            <div class="col-md-6 text-left">
+                <button type="button" class="btn btn-light info" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-trigger="hover" data-content="Welcome! This is a site designed to help you learn how to distinguish between consonants in the Korean alphabet. It can be difficult because some Korean consonants similar to English ones, yet not quite. Happy learning!">First time here?</button>
+            </div>
+            <div class="col-md-6 text-right">
+                <button class="btn btn-outline-primary my-2 my-sm-0" disabled><i class="material-icons">home</i></button>
             </div>
         </nav>
 
@@ -62,34 +62,6 @@
                 <div class="col-md-12 text-center">
                     Select which set of Korean consonants you would like to learn how to distinguish between.
                 </div>
-            </div>
-            <div class="row spaced">
-                <div class="col-md-3"></div>
-                <div class="col-md-6 text-center">
-                    <button type="button" class="btn btn-outline-secondary fat full-width" id="bp">ㅂ, ㅃ, ㅍ</button>
-                </div>
-                <div class="col-md-3 label"></div>
-            </div>
-            <div class="row spaced">
-                <div class="col-md-3"></div>
-                <div class="col-md-6 text-center">
-                    <button type="button" class="btn btn-outline-secondary fat full-width" id="sj">ㅅ, ㅆ, ㅈ, ㅉ, ㅊ</button>
-                </div>
-                <div class="col-md-3 label"></div>
-            </div>
-            <div class="row spaced">
-                <div class="col-md-3"></div>
-                <div class="col-md-6 text-center">
-                    <button type="button" class="btn btn-outline-secondary fat full-width" id="dt">ㄷ, ㄸ, ㅌ</button>
-                </div>
-                <div class="col-md-3 label"></div>
-            </div>
-            <div class="row spaced">
-                <div class="col-md-3"></div>
-                <div class="col-md-6 text-center">
-                    <button type="button" class="btn btn-outline-secondary fat full-width" id="gk">ㄱ, ㄲ, ㅋ</button>
-                </div>
-                <div class="col-md-3 label"></div>
             </div>
         </div>
     </body>

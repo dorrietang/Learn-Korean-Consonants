@@ -1,3 +1,15 @@
+function show_content(){
+    for (var section in info) {
+        var row = $('<div class="row spaced">')
+        row.append($('<div class="col-md-3"></div'))
+        var text = $('<div class="col-md-6 text-center">')
+        text.append($('<button type="button" class="btn btn-outline-secondary fat full-width" id="' + section + '">' + info[section]["comma"] + '</button>'))
+        row.append(text)
+        row.append($('<div class="col-md-3 label"></div'))
+        $('.container').append(row)
+    }
+}
+
 function show_progress(){
     for (var section in progress) {
         var section_element = $("#" + section)
@@ -33,6 +45,7 @@ function in_progress(section) {
 }
 
 $(document).ready(function(){
+    show_content()
     show_progress()
 
     $("#bp").click(function(){
@@ -78,4 +91,6 @@ $(document).ready(function(){
     $("#gk-result").click(function(){
         window.location='/gk/result'
     })
+
+    $('.info').popover()
 })
