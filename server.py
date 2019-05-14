@@ -666,7 +666,7 @@ def home():
 
 @app.route('/<cons>')
 def learn(cons=None):
-   return render_template('learn.html', data=data[cons], ling=ling_defs)
+   return render_template('learn.html', progress=progress, data=data[cons], ling=ling_defs)
 
 @app.route('/<cons>/quiz')
 def quiz(cons=None):

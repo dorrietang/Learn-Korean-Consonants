@@ -13,6 +13,7 @@
         <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
 
         <script>
+            var progress = {{progress|tojson}}
             var data = {{data|tojson}}
             var ling = {{ling|tojson}}
         </script>
@@ -81,7 +82,7 @@
                 margin-right: 5px;
             }
 
-            .pencil {
+            .icon {
                 margin-bottom: 5px;
                 margin-right: 10px;
                 vertical-align: sub;
@@ -101,7 +102,7 @@
                 vertical-align: top;
             }
 
-            #quiz {
+            #btn-wrapper {
                 margin-top: 40px;
                 margin-bottom: 100px;
             }
@@ -119,7 +120,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 center" id="next">
-                    <button class="btn" id="quiz"><i class="material-icons pencil">create</i><span class="test-text">I'm ready to test my progress!</span></button>
+                    
                 </div>
             </div>
         </div>

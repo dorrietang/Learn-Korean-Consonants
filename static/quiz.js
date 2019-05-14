@@ -24,9 +24,9 @@ function show_questions(){
         }
 
         output.push(
-            '<div class="row spaced">' + (i+1) + '. <audio class="sound" src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'
+            '<div class="row spaced"><div class="col-md-12 text-center">' + (i+1) + '. <audio class="sound" src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'
             + '<button class="button"><i class="material-icons">play_arrow</i></button>'
-            + '<div class="btn-group btn-group-toggle answers" data-toggle="buttons">' + answers.join('') + '</div></div>'
+            + '<div class="btn-group btn-group-toggle answers" data-toggle="buttons">' + answers.join('') + '</div></div></div>'
         )
     }
 

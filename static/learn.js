@@ -23,7 +23,7 @@ function show_navbar(){
     $('.navbar').prepend($('<a class="navbar-brand">' + title + '</a>'))
 }
 
-function show_content(){
+function show_content(has_results){
     for (var i = 0; i < data.length; i++) {
         var cons_info = $('<div class="row spaced">')
 
@@ -71,11 +71,21 @@ function show_content(){
         
         $('#content').append(cons_info)
     }
+
+    if (has_results) {
+        $("#next").append($('<button class="btn btn-secondary" id="btn-wrapper"><i class="material-icons icon">assessment</i><span class="test-text">Review your quiz results</span></button>'))
+    } else {
+        var str = "I'm ready to test my progress!"
+        $("#next").append($('<button class="btn btn-secondary" id="btn-wrapper"><i class="material-icons icon">create</i><span class="test-text">' + str + '</span></button>'))
+    }
 }
 
 $(document).ready(function(){
+    var section = String(window.location).split("/")[3]
+    var has_results = (progress[section] === 2)
+
     show_navbar()
-    show_content()
+    show_content(has_results)
 
     $(".button").click(function(){
         $(this).parent().siblings('.sound')[0].play();
@@ -87,8 +97,12 @@ $(document).ready(function(){
         heightStyle: "content"
     });
 
-    $("#quiz").click(function(){              
-        window.location=window.location + '/quiz';
+    $("#btn-wrapper").click(function(){
+        if (has_results) {
+            window.location=window.location + '/result';
+        } else {
+            window.location=window.location + '/quiz';
+        }             
     });
 
     $("#home").click(function(){              
