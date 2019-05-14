@@ -4,9 +4,9 @@ function show_title(){
 
 function show_instructions(part) {
     if (part == 1) {
-        $("#instructions").append($('<span class="font">Listen to each consonant and select the one that you hear.</span>'))
+        $("#instructions").append($('<span class="font">Listen to each <b>consonant</b> and select the one that you hear.</span>'))
     } else {
-        $("#instructions").append($('<span class="font">Listen to each word and select the consonant you hear used in each one.</span>'))
+        $("#instructions").append($('<span class="font">Listen to each <b>word</b> and select the consonant you hear used in each one.</span>'))
     }
 }
 
