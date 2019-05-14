@@ -1,5 +1,5 @@
-function show_title(section){
-    $('#title').append($('<a class="navbar-brand">Quiz: ' + info[section]["slash"] + '</a>'))
+function show_title(){
+    $('#title').append($('<a class="navbar-brand">Quiz: ' + info["slash"] + '</a>'))
 }
 
 function show_instructions(part) {
@@ -10,18 +10,18 @@ function show_instructions(part) {
     }
 }
 
-function show_questions(section, part){
+function show_questions(part){
     var output = []
 
     for (var i = 0; i < quiz.length/2; i++) {
         var num = i + (parseInt(part)-1)*5
         var answers = []
 
-        for (letter in info[section]["options"]) {
+        for (letter in info["options"]) {
             answers.push(
                 '<label class="btn btn-outline-secondary">'
                     + '<input type="radio" class="question'+num+'" value="'+letter+'">'
-                    + info[section]["options"][letter]
+                    + info["options"][letter]
                 + '</label>'
             )
         }
@@ -36,9 +36,9 @@ function show_questions(section, part){
     $("#quiz").html(output.join(''))
 }
 
-function show_selected(section, part){
+function show_selected(part){
     $('input').each(function(i) {
-        var options = Object.keys(info[section]["options"])
+        var options = Object.keys(info["options"])
         var num = Math.floor(i/options.length) + (parseInt(part)-1)*5
         
         if (options[i%options.length] == quiz[num]["userAnswer"]) {
@@ -128,10 +128,10 @@ function completed(section) {
 $(document).ready(function(){
     var section = String(window.location).split("/")[3]
     var part = String(window.location).split("/")[5]
-    show_title(section)
+    show_title()
     show_instructions(part)
-    show_questions(section, part)
-    show_selected(section, part)
+    show_questions(part)
+    show_selected(part)
     show_ending(part)
 
     $("input").click(function(){

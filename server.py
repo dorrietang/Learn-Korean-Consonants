@@ -697,15 +697,15 @@ def home():
 
 @app.route('/<cons>')
 def learn(cons=None):
-   return render_template('learn.html', progress=progress, info=info, data=data[cons], ling=ling_defs)
+   return render_template('learn.html', progress=progress, info=info[cons], data=data[cons], ling=ling_defs)
 
 @app.route('/<cons>/quiz/<page>')
 def quiz(cons=None, page=None):
-   return render_template('quiz.html', info=info, data=quiz_data[cons])
+   return render_template('quiz.html', info=info[cons], data=quiz_data[cons])
 
 @app.route('/<cons>/result')
 def result(cons=None):
-   return render_template('result.html', info=info, data=quiz_data[cons])
+   return render_template('result.html', info=info[cons], data=quiz_data[cons])
 
 @app.route('/update_answers', methods=['POST'])
 def update_answers():

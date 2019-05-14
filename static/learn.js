@@ -11,7 +11,7 @@ function get_ling(desc){
     return info
 }
 
-function show_navbar(section){
+function show_navbar(){
     var title = "Learn: "
     for (var i = 0; i < data.length; i++) {
         title += data[i]["consonant"]
@@ -20,7 +20,7 @@ function show_navbar(section){
         }
     }
     $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
-    $('#title').append($('<a class="navbar-text">(' + info[section]["romanized"] + '-like consonant sounds)</a>'))
+    $('#title').append($('<a class="navbar-text">(' + info["romanized"] + '-like consonant sounds)</a>'))
 }
 
 function show_content(has_results){
@@ -84,7 +84,7 @@ $(document).ready(function(){
     var section = String(window.location).split("/")[3]
     var has_results = (progress[section] === 2)
 
-    show_navbar(section)
+    show_navbar()
     show_content(has_results)
 
     $(".play-button").click(function(){
