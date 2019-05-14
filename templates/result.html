@@ -23,39 +23,31 @@
                 margin-right: 10px;
             }
 
-            .btn-wrapper {
-                height: 30px;
+            .large-spaced {
+                margin-top: 30px;
+                margin-bottom: 30px;
             }
 
-            .button {
+            .play-button {
                 background: none;
                 border-radius: 20px;
                 margin-left: 10px;
                 margin-right: 13px;
+                padding: 5px;
             }
 
-            .button:focus {
+            .play-button:focus {
                 outline: none;
             }
 
-            .button:hover {
+            .play-button:hover {
                 background-color: silver;
             }
 
-            .center {
-                margin: auto;
-                text-align: center;
-            }
-
-            .icon {
+            .reset-icon {
                 margin-bottom: 5px;
                 margin-right: 10px;
                 vertical-align: sub;
-            }
-
-            .large-spaced {
-                margin-top: 30px;
-                margin-bottom: 30px;
             }
 
             .small-spaced {
@@ -79,13 +71,15 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-8 center large-spaced" id="results">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center large-spaced" id="results">
 
                 </div>
+                <div class="col-md-2"></div>
             </div>
             <div class="row">
-                <div class="col-md-8 center">
-                    <button class="btn btn-outline-secondary" id="redo"><i class="material-icons icon">replay</i><span class="test-text">Reset & Take this quiz again</span></button>
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-outline-secondary" id="redo"><i class="material-icons reset-icon">replay</i><span>Reset & Take this quiz again</span></button>
                 </div>
             </div>
         </div>

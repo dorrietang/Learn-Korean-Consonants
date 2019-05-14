@@ -25,7 +25,7 @@ function show_navbar(){
 
 function show_content(has_results){
     for (var i = 0; i < data.length; i++) {
-        var cons_info = $('<div class="row spaced">')
+        var cons_info = $('<div class="row spaced-vert">')
 
         var div_1 = $('<div class="col-md-3">')
         div_1.append($('<img class="border" src="../static/images/' + data[i]["image"] + '">'))
@@ -34,7 +34,7 @@ function show_content(has_results){
         var div_2 = $('<div class="col-md-8">')
         var row_1 = $('<div class="row">')
         row_1.append($('<audio class="sound" src="../static/audio/' + data[i]["sound"] + '" preload="auto"></audio>'))
-        row_1.append($('<span class="desc"><button class="button"><i class="material-icons play-icon">play_arrow</i></button></span><span>' + data[i]["description"] + '</span>'))
+        row_1.append($('<span class="desc"><button class="play-button"><i class="material-icons play-icon">play_arrow</i></button></span><span>' + data[i]["description"] + '</span>'))
         var ling = $('<div class="ling">')
         ling.append($('<span class="italic">Ling. </span>'))
         ling.append($('<span>' + data[i]["linguistic"] + '</span>'))
@@ -53,8 +53,8 @@ function show_content(has_results){
 
             var ex_div_2 = $('<div class="col-md-8">')
             var ex_row = $('<div class="row">')
-            ex_row.append($('<audio class="sound" src="../static/audio/' + data[i]["examples"][j]["sound"] + '" preload="auto"></audio>'))
-            ex_row.append($('<span class="desc"><button class="button"><i class="material-icons play-icon">play_arrow</i></button></span><span>"' + data[i]["examples"][j]["pronunciation"] + '"</span>'))
+            ex_row.append($('<audio src="../static/audio/' + data[i]["examples"][j]["sound"] + '" preload="auto"></audio>'))
+            ex_row.append($('<span class="desc"><button class="play-button"><i class="material-icons play-icon">play_arrow</i></button></span><span>"' + data[i]["examples"][j]["pronunciation"] + '"</span>'))
             ex_div_2.append(ex_row)
             if (data[i]["examples"][j]["meaning"] != "") {
                 ex_div_2.append($('<div class="row meaning">(<span class="italic meaning-text">meaning:</span><span>' + data[i]["examples"][j]["meaning"] + '</span>)</div>'))
@@ -73,10 +73,10 @@ function show_content(has_results){
     }
 
     if (has_results) {
-        $("#next").append($('<button class="btn btn-secondary" id="btn-wrapper"><i class="material-icons icon">assessment</i><span class="test-text">Review your quiz results</span></button>'))
+        $("#next").append($('<button class="btn btn-info" id="btn-wrapper"><i class="material-icons next-btn-icon">assessment</i><span>Review your quiz results</span></button>'))
     } else {
         var str = "I'm ready to test my progress!"
-        $("#next").append($('<button class="btn btn-secondary" id="btn-wrapper"><i class="material-icons icon">create</i><span class="test-text">' + str + '</span></button>'))
+        $("#next").append($('<button class="btn btn-info" id="btn-wrapper"><i class="material-icons next-btn-icon">create</i><span>' + str + '</span></button>'))
     }
 }
 
@@ -87,8 +87,8 @@ $(document).ready(function(){
     show_navbar()
     show_content(has_results)
 
-    $(".button").click(function(){
-        $(this).parent().siblings('.sound')[0].play();
+    $(".play-button").click(function(){
+        $(this).parent().siblings('audio')[0].play();
     });
 
     $( ".collapsible" ).accordion({

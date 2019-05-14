@@ -16,7 +16,7 @@ function show_questions(){
 
         for (letter in quiz[i].answers) {
             answers.push(
-                '<label class="btn btn-outline-secondary option">'
+                '<label class="btn btn-outline-secondary">'
                     + '<input type="radio" class="question'+i+'" value="'+letter+'">'
                     + quiz[i].answers[letter]
                 + '</label>'
@@ -24,8 +24,8 @@ function show_questions(){
         }
 
         output.push(
-            '<div class="row spaced"><div class="col-md-12 text-center">' + (i+1) + '. <audio class="sound" src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'
-            + '<button class="button"><i class="material-icons">play_arrow</i></button>'
+            '<div class="row spaced-vert"><div class="col-md-12 text-center">' + (i+1) + '. <audio src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'
+            + '<button class="play-button"><i class="material-icons">play_arrow</i></button>'
             + '<div class="btn-group btn-group-toggle answers" data-toggle="buttons">' + answers.join('') + '</div></div></div>'
         )
     }
@@ -90,8 +90,8 @@ $(document).ready(function(){
         });
     })
 
-    $(".button").click(function(){
-        $(this).siblings('.sound')[0].play()
+    $(".play-button").click(function(){
+        $(this).siblings('audio')[0].play()
     });
 
     $("#back").click(function(){  

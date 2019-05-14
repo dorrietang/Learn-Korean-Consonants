@@ -23,45 +23,46 @@
                 margin-right: 10px;
             }
 
-            .button {
+            .play-button {
                 background: none;
                 border-radius: 20px;
                 margin-left: 10px;
                 margin-right: 13px;
+                padding: 5px;
+                vertical-align: bottom;
             }
 
-            .button:focus {
+            .play-button:focus {
                 outline: none;
             }
 
-            .button:hover {
+            .play-button:hover {
                 background-color: silver;
             }
 
-            .center {
-                margin: auto;
-                text-align: center;
+            .spaced-vert {
+                margin-top: 25px;
+                margin-bottom: 25px;
             }
 
-            .spaced {
+            #submit {
                 margin-top: 30px;
-                margin-bottom: 30px;
             }
         </style>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
             <div id="title">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#warningModal"><  Back to Review</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#warningModalBack"><  Back to Review</button>
             </div>
-            <button class="btn btn-outline-primary my-2 my-sm-0" id="home">Main Menu</button>
+            <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#warningModalHome">Main Menu</button>
         </nav>
           
-        <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+        <div class="modal fade" id="warningModalBack" tabindex="-1" role="dialog" aria-labelledby="warningModalBackLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="warningModalLabel">Leaving this page?</h5>
+                        <h5 class="modal-title" id="warningModalBackLabel">Leaving this page?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -77,23 +78,40 @@
             </div>
         </div>
 
+        <div class="modal fade" id="warningModalHome" tabindex="-1" role="dialog" aria-labelledby="warningModalHomeLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="warningModalHomeLabel">Leaving this page?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        As you return to the Main Menu, your selections on this quiz page will not be saved.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-info" id="home">Proceed to Main Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
-            <div class="center spaced">
-                Select the consonant that you hear in each question.
+            <div class="row">
+                <div class="col-md-12 text-center spaced-vert">
+                    Select the consonant that you hear in each question.
+                </div>
             </div>
             <div class="row">
-                <div class="col-md-4 center" id="quiz">
+                <div class="col-md-12 text-center" id="quiz">
                     
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 center">
+                <div class="col-md-12 text-center">
                     <button class="btn btn-secondary" id="submit">Submit</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 center" id="results">
-
                 </div>
             </div>
         </div>

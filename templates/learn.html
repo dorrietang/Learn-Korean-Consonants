@@ -27,51 +27,27 @@
                 border-style: dotted;
             }
 
-            .button {
-                background: none;
-                border-radius: 20px;
-                margin-right: 10px;
-            }
-
-            .button:focus {
-                outline: none;
-            }
-
-            .button:hover {
-                background-color: silver;
-            }
-
-            .center {
-                margin: auto;
-                text-align: center;
-            }
-
-            .content {
-                display:none;
-            }
-
             .desc {
                 height: 30px;
+            }
+
+            .info {        
+                border-radius: 10px;
+                height: 20px;
+                font-size: 12px;
+                margin-left: 10px;
+                padding: 0px 0px;
+                text-align: center;
+                width: 20px;
+            }
+
+            .italic {
+                font-style: italic;
             }
 
             .ling {
                 margin-left: 50px;
                 margin-bottom: 10px;
-            }
-
-            .info {
-                width: 20px;
-                height: 20px;
-                padding: 0px 0px;
-                border-radius: 10px;
-                text-align: center;
-                font-size: 12px;
-                margin-left: 10px;
-                
-            }
-
-            .italic {
-                font-style: italic;
             }
 
             .meaning {
@@ -82,10 +58,24 @@
                 margin-right: 5px;
             }
 
-            .icon {
+            .next-btn-icon {
                 margin-bottom: 5px;
                 margin-right: 10px;
                 vertical-align: sub;
+            }
+
+            .play-button {
+                background: none;
+                border-radius: 20px;
+                margin-right: 10px;
+            }
+
+            .play-button:focus {
+                outline: none;
+            }
+
+            .play-button:hover {
+                background-color: silver;
             }
 
             .play-icon {
@@ -93,13 +83,9 @@
                 margin-bottom: 5px;
             }
 
-            .spaced {
+            .spaced-vert {
                 margin-top: 30px;
                 margin-bottom: 30px;
-            }
-
-            .word-sound {
-                vertical-align: top;
             }
 
             #btn-wrapper {
@@ -114,12 +100,14 @@
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 center" id="content">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center" id="content">
 
                 </div>
+                <div class="col-md-3"></div>
             </div>
             <div class="row">
-                <div class="col-md-6 center" id="next">
+                <div class="col-md-12 text-center" id="next">
                     
                 </div>
             </div>

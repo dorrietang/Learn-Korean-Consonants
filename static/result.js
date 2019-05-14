@@ -38,8 +38,8 @@ function show_results(){
     for (var i = 0; i < quiz.length; i++) {
         if (quiz[i].userAnswer != quiz[i].correctAnswer) {
             var q_info = $('<div class="row small-spaced">')
-            q_info.append($('<audio class="sound" src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'))
-            q_info.append($('<div class="col-md-2 btn-wrapper"><button class="button"><i class="material-icons play-icon">play_arrow</i><div>'))
+            q_info.append($('<audio src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'))
+            q_info.append($('<div class="col-md-2 btn-wrapper"><button class="play-button"><i class="material-icons play-icon">play_arrow</i><div>'))
             q_info.append($('<div class="col-md-3">Your answer: </div>'))
             if (quiz[i].userAnswer == null) {
                 q_info.append($('<div class="col-md-2">(blank)</div>'))
@@ -92,8 +92,8 @@ $(document).ready(function(){
     show_navbar()
     show_results()
 
-    $(".button").click(function(){
-        $(this).parent().siblings('.sound')[0].play()
+    $(".play-button").click(function(){
+        $(this).parent().siblings('audio')[0].play()
     });
 
     $("#back").click(function(){  
