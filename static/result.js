@@ -97,7 +97,7 @@ $(document).ready(function(){
     });
 
     $("#home").click(function(){              
-        window.location='/home'
+        window.location='/'
     });
 
     $("#redo").click(function(){

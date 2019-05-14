@@ -20,7 +20,7 @@ function show_navbar(section){
         }
     }
     $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
-    $('#title').append($('<a class="navbar-text">(' + info[section]["romanized"] + '-like consonants)</a>'))
+    $('#title').append($('<a class="navbar-text">(' + info[section]["romanized"] + '-like consonant sounds)</a>'))
 }
 
 function show_content(has_results){
@@ -106,7 +106,7 @@ $(document).ready(function(){
     });
 
     $("#home").click(function(){              
-        window.location='/home';
+        window.location='/';
     });
 
     $('.info').popover()

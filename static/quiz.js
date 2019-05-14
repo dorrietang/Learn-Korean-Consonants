@@ -95,7 +95,7 @@ $(document).ready(function(){
     });
 
     $("#home").click(function(){              
-        window.location='/home'
+        window.location='/'
     });
 
     $("#submit").click(function(){

@@ -3,7 +3,7 @@ function show_content(){
         var row = $('<div class="row spaced">')
         row.append($('<div class="col-md-3"></div'))
         var text = $('<div class="col-md-6 text-center">')
-        text.append($('<button type="button" class="btn btn-outline-secondary fat full-width" id="' + section + '">' + info[section]["comma"] + '</button>'))
+        text.append($('<button type="button" class="btn btn-outline-secondary fat full-width" id="' + section + '" title="' + info[section]["romanized"] + '-like consonant sounds">' + info[section]["comma"] + '</button>'))
         row.append(text)
         row.append($('<div class="col-md-3 label"></div'))
         $('.container').append(row)
