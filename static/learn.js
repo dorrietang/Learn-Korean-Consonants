@@ -101,7 +101,7 @@ $(document).ready(function(){
         if (has_results) {
             window.location=window.location + '/result';
         } else {
-            window.location=window.location + '/quiz';
+            window.location=window.location + '/quiz/1';
         }             
     });
 

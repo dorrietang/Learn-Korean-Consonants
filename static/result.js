@@ -4,10 +4,10 @@ function show_title(section){
 
 function clear_answers(section){
     var answers = []
-    $('.answers').each(function(i) {
+    for (var i = 0; i < quiz.length/2; i++) {
         answers.push('')
-    });
-    var update = {"section": section, "answers": answers}
+    }
+    var update = {"section": section, "part": "3", "answers": answers}
     $.ajax({
         type: "POST",
         url: "/update_answers",                
@@ -15,7 +15,8 @@ function clear_answers(section){
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(update),
         success: function(result){
-            quiz = result["quiz"][section]
+            quiz = result["quiz_data"][section]
+            console.log(quiz)
         },
         error: function(request, status, error){
             console.log("Error");
@@ -103,6 +104,6 @@ $(document).ready(function(){
     $("#redo").click(function(){
         clear_answers(section)
         reset(section)
-        window.location="./quiz"
+        window.location="./quiz/1"
     });
 })

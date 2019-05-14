@@ -492,6 +492,31 @@ quiz_data = {
          "question": "ㅂ.mp3",
          "correctAnswer": 'a',
          "userAnswer": ''
+      },
+      {
+         "question": "불.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
+      },
+      {
+         "question": "밥.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
+      },
+      {
+         "question": "빵.mp3",
+         "correctAnswer": 'b',
+         "userAnswer": ''
+      },
+      {
+         "question": "팔.mp3",
+         "correctAnswer": 'c',
+         "userAnswer": ''
+      },
+      {
+         "question": "백.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
       }
    ],
    "sj": [
@@ -517,6 +542,31 @@ quiz_data = {
       },
       {
          "question": "ㅆ.mp3",
+         "correctAnswer": 'b',
+         "userAnswer": ''
+      },
+      {
+         "question": "책.mp3",
+         "correctAnswer": 'e',
+         "userAnswer": ''
+      },
+      {
+         "question": "저.mp3",
+         "correctAnswer": 'c',
+         "userAnswer": ''
+      },
+      {
+         "question": "삼.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
+      },
+      {
+         "question": "칠.mp3",
+         "correctAnswer": 'e',
+         "userAnswer": ''
+      },
+      {
+         "question": "쌀.mp3",
          "correctAnswer": 'b',
          "userAnswer": ''
       }
@@ -546,6 +596,31 @@ quiz_data = {
          "question": "ㄸ.mp3",
          "correctAnswer": 'b',
          "userAnswer": ''
+      },
+      {
+         "question": "딸.mp3",
+         "correctAnswer": 'b',
+         "userAnswer": ''
+      },
+      {
+         "question": "대.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
+      },
+      {
+         "question": "도.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
+      },
+      {
+         "question": "티.mp3",
+         "correctAnswer": 'c',
+         "userAnswer": ''
+      },
+      {
+         "question": "뒤.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
       }
    ],
    "gk": [
@@ -573,6 +648,31 @@ quiz_data = {
          "question": "ㄲ.mp3",
          "correctAnswer": 'b',
          "userAnswer": ''
+      },
+      {
+         "question": "콩.mp3",
+         "correctAnswer": 'c',
+         "userAnswer": ''
+      },
+      {
+         "question": "교.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
+      },
+      {
+         "question": "깨.mp3",
+         "correctAnswer": 'b',
+         "userAnswer": ''
+      },
+      {
+         "question": "키.mp3",
+         "correctAnswer": 'c',
+         "userAnswer": ''
+      },
+      {
+         "question": "구.mp3",
+         "correctAnswer": 'a',
+         "userAnswer": ''
       }
    ]
 }
@@ -599,8 +699,8 @@ def home():
 def learn(cons=None):
    return render_template('learn.html', progress=progress, info=info, data=data[cons], ling=ling_defs)
 
-@app.route('/<cons>/quiz')
-def quiz(cons=None):
+@app.route('/<cons>/quiz/<page>')
+def quiz(cons=None, page=None):
    return render_template('quiz.html', info=info, data=quiz_data[cons])
 
 @app.route('/<cons>/result')
@@ -613,9 +713,13 @@ def update_answers():
 
    json_data = request.get_json()
    section = json_data["section"]
+   part = json_data["part"]
    answers = json_data["answers"]
    for i in range(len(answers)):
-      quiz_data[section][i]["userAnswer"] = answers[i]
+      if part != "2":
+         quiz_data[section][i]["userAnswer"] = answers[i]
+      if part != "1":
+         quiz_data[section][i+5]["userAnswer"] = answers[i]
 
    return jsonify(quiz_data=quiz_data)
 
