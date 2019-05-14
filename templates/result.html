@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Abel|Muli|Roboto:Bold" rel="stylesheet">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,9 +25,52 @@
                 margin-right: 10px;
             }
 
+            .box {
+                border-style: solid;
+                border-width: thin;
+            }
+
+            .font-cursive {
+                font-family: 'Dancing Script';
+                font-size: 40px;
+            }
+
+            .font-prof {
+                font-family: 'Muli';
+            }
+
+            .font-thin {
+                font-family: 'Abel';
+            }
+
+            .font-title {
+                font-family: 'Roboto';
+            }
+
+            .red {
+                color: red;
+            }
+
+            .green {
+                color: green
+            }
+
+            .silver {
+                color: silver;
+            }
+
             .large-spaced {
                 margin-top: 25px;
                 margin-bottom: 25px;
+            }
+
+            .mini-box {
+                border-color: silver;
+                border-style: solid;
+                border-width: thin;
+                margin-left: 5px;
+                margin-right: 5px;
+                padding: 10px;
             }
 
             .play-button {
@@ -56,6 +100,14 @@
                 margin-bottom: 10px;
             }
 
+            .space {
+                margin-bottom: 70px;
+            }
+
+            .summary {
+                margin-bottom: 30px;
+            }
+
             #redo {
                 margin-top: 40px;
                 margin-bottom: 100px;
@@ -78,7 +130,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 text-right large-spaced">
-                    <button class="btn btn-info" id="back"><  Back to Review</button>
+                    <button class="btn btn-info font-title" id="back"><  Back to Review</button>
                 </div>
                 <div class="col-md-8 text-center large-spaced" id="results">
 
@@ -87,7 +139,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <button class="btn btn-outline-secondary" id="redo"><i class="material-icons reset-icon">replay</i><span>Reset & Take this quiz again</span></button>
+                    <button class="btn btn-outline-secondary" id="redo"><i class="material-icons reset-icon">replay</i><span class="font-title">Reset & Take this quiz again</span></button>
                 </div>
             </div>
         </div>

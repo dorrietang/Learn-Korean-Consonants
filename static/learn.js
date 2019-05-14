@@ -12,15 +12,8 @@ function get_ling(desc){
 }
 
 function show_navbar(){
-    var title = "Learn: "
-    for (var i = 0; i < data.length; i++) {
-        title += data[i]["consonant"]
-        if (i < data.length-1) {
-            title += "/"
-        }
-    }
-    $('#title').append($('<a class="navbar-brand">' + title + '</a>'))
-    $('#title').append($('<a class="navbar-text">(' + info["romanized"] + '-like consonant sounds)</a>'))
+    $('#title').append($('<a class="navbar-brand font-title">Learn: ' + info["slash"] + '</a>'))
+    $('#title').append($('<a class="navbar-text font-title">(' + info["romanized"] + '-like consonant sounds)</a>'))
 }
 
 function show_content(has_results){
@@ -34,15 +27,15 @@ function show_content(has_results){
         var div_2 = $('<div class="col-md-8">')
         var row_1 = $('<div class="row">')
         row_1.append($('<audio class="sound" src="../static/audio/' + data[i]["sound"] + '" preload="auto"></audio>'))
-        row_1.append($('<span class="desc"><button class="play-button"><i class="material-icons play-icon">play_arrow</i></button></span><span>' + data[i]["description"] + '</span>'))
+        row_1.append($('<span class="desc"><button class="play-button"><i class="material-icons play-icon">play_arrow</i></button></span><span class="font">' + data[i]["description"] + '</span>'))
         var ling = $('<div class="ling">')
-        ling.append($('<span class="italic">Ling. </span>'))
-        ling.append($('<span>' + data[i]["linguistic"] + '</span>'))
+        ling.append($('<span class="font italic">Ling. </span>'))
+        ling.append($('<span class="font">' + data[i]["linguistic"] + '</span>'))
         ling.append($('<button type="button" class="btn btn-secondary info" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="' + get_ling(data[i]["linguistic"]) + '">i</button>'))
         row_1.append(ling)
         var row_2 = $('<div class="row">')
-        var collapsible = $('<div class="collapsible">')
-        collapsible.append($('<div>See examples</div>'))
+        var collapsible = $('<div class="collapsible small">')
+        collapsible.append($('<div class="font">See examples</div>'))
         var ex = $('<div>')
         for (var j = 0; j < data[i]["examples"].length; j++) {
             var one_ex = $('<div class="row">')
@@ -54,10 +47,10 @@ function show_content(has_results){
             var ex_div_2 = $('<div class="col-md-8">')
             var ex_row = $('<div class="row">')
             ex_row.append($('<audio src="../static/audio/' + data[i]["examples"][j]["sound"] + '" preload="auto"></audio>'))
-            ex_row.append($('<span class="desc"><button class="play-button"><i class="material-icons play-icon">play_arrow</i></button></span><span>"' + data[i]["examples"][j]["pronunciation"] + '"</span>'))
+            ex_row.append($('<span class="desc"><button class="play-button"><i class="material-icons play-icon">play_arrow</i></button></span><span class="font">"' + data[i]["examples"][j]["pronunciation"] + '"</span>'))
             ex_div_2.append(ex_row)
             if (data[i]["examples"][j]["meaning"] != "") {
-                ex_div_2.append($('<div class="row meaning">(<span class="italic meaning-text">meaning:</span><span>' + data[i]["examples"][j]["meaning"] + '</span>)</div>'))
+                ex_div_2.append($('<div class="row meaning">(<span class="font italic meaning-text">meaning:</span><span>' + data[i]["examples"][j]["meaning"] + '</span>)</div>'))
             }
             one_ex.append(ex_div_2)
 
@@ -73,10 +66,10 @@ function show_content(has_results){
     }
 
     if (has_results) {
-        $("#next").append($('<button class="btn btn-info" id="btn-wrapper"><i class="material-icons next-btn-icon">assessment</i><span>Review your quiz results</span></button>'))
+        $("#next").append($('<button class="btn btn-info" id="btn-wrapper"><i class="material-icons next-btn-icon">assessment</i><span class="font-title">Review your quiz results</span></button>'))
     } else {
         var str = "I'm ready to test my progress!"
-        $("#next").append($('<button class="btn btn-info" id="btn-wrapper"><i class="material-icons next-btn-icon">create</i><span>' + str + '</span></button>'))
+        $("#next").append($('<button class="btn btn-info" id="btn-wrapper"><i class="material-icons next-btn-icon">create</i><span class="font">' + str + '</span></button>'))
     }
 }
 

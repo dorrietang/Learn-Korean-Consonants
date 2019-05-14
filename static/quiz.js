@@ -1,12 +1,12 @@
 function show_title(){
-    $('#title').append($('<a class="navbar-brand">Quiz: ' + info["slash"] + '</a>'))
+    $('#title').append($('<a class="navbar-brand font-title">Quiz: ' + info["slash"] + '</a>'))
 }
 
 function show_instructions(part) {
     if (part == 1) {
-        $("#instructions").append($('<span>Listen to each consonant and select the one that you hear.</span>'))
+        $("#instructions").append($('<span class="font">Listen to each consonant and select the one that you hear.</span>'))
     } else {
-        $("#instructions").append($('<span>Listen to each word and select the consonant you hear used in each one.</span>'))
+        $("#instructions").append($('<span class="font">Listen to each word and select the consonant you hear used in each one.</span>'))
     }
 }
 
@@ -27,7 +27,7 @@ function show_questions(part){
         }
 
         output.push(
-            '<div class="row spaced-vert"><div class="col-md-12 text-center">' + (num+1) + '. <audio src="../../static/audio/' + quiz[num].question + '" preload="auto"></audio>'
+            '<div class="row spaced-vert"><div class="col-md-12 text-center font">' + (num+1) + '. <audio src="../../static/audio/' + quiz[num].question + '" preload="auto"></audio>'
             + '<button class="play-button"><i class="material-icons">play_arrow</i></button>'
             + '<div class="btn-group btn-group-toggle answers" data-toggle="buttons">' + answers.join('') + '</div></div></div>'
         )
@@ -50,9 +50,10 @@ function show_selected(part){
 
 function show_ending(part) {
     if (part == 1) {
-        $("#ending").append($('<button class="btn btn-secondary" id="next">Next Part</button>'))
+        $("#ending").append($('<button class="btn btn-secondary font-title" id="next">Next Part ></button>'))
     } else {
-        $("#ending").append($('<span><button class="btn btn-outline-secondary" id="prev">Prev Part</button><button class="btn btn-secondary" id="submit">Submit</button></span>'))
+        $("#ending").append($('<button class="btn btn-outline-secondary font-title" id="prev">< Prev Part</button>'))
+        $("#ending").append($('<button class="btn btn-secondary font-title" id="submit">Submit</button>'))
     }
 }
 

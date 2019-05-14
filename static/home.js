@@ -16,11 +16,11 @@ function show_progress(){
         if (progress[section] == 1) {
             section_element.removeClass("btn-outline-secondary")
             section_element.addClass("btn-outline-warning")
-            section_element.parent().siblings('.label').append($('<div class="in-progress">In Progress</div>'))
+            section_element.parent().siblings('.label').append($('<div class="in-progress font"><b>In Progress</b></div>'))
         } else if (progress[section] == 2) {
             section_element.removeClass("btn-outline-secondary")
             section_element.addClass("btn-outline-success")
-            section_element.parent().siblings('.label').append($('<div class="completed">Completed<button class="btn btn-success result" id="' + section + '-result" title="Review quiz result"><i class="material-icons">assessment</i></button></div>'))
+            section_element.parent().siblings('.label').append($('<div class="completed font"><b>Completed</b><button class="btn btn-success result" id="' + section + '-result" title="Review quiz result"><i class="material-icons">assessment</i></button></div>'))
         }
     }
 }

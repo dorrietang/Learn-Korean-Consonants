@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Muli|Roboto:Bold" rel="stylesheet">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,6 +25,18 @@
                 margin-right: 10px;
             }
 
+            .border {
+                border-style: solid;
+            }
+
+            .font {
+                font-family: 'Muli';
+            }
+
+            .font-title {
+                font-family: 'Roboto';
+            }
+
             .play-button {
                 background: none;
                 border-radius: 20px;
@@ -46,8 +59,16 @@
                 margin-bottom: 25px;
             }
 
-            #submit {
+            #ending {
                 margin-top: 30px;
+            }
+
+            #instructions {
+                font-size: 18px;
+            }
+
+            #prev {
+                margin-right: 30px;
             }
         </style>
     </head>
@@ -107,7 +128,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 text-right spaced-vert">
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#warningModalBack"><  Back to Review</button>
+                    <button type="button" class="btn btn-info font-title" data-toggle="modal" data-target="#warningModalBack"><  Back to Review</button>
                 </div>
                 <div class="col-md-8 text-center spaced-vert" id="instructions">
                     

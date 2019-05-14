@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,6 +28,10 @@
                 padding-bottom: 10px;
             }
 
+            .font {
+                font-family: 'Muli';
+            }
+
             .full-width {
                 width: 100%;
             }
@@ -42,15 +46,21 @@
             }
 
             .spaced {
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+
+            #instructions {
+                font-size: 18px;
                 margin-top: 30px;
-                margin-bottom: 30px;
+                margin-bottom: 50px;
             }
         </style>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-light bg-light">
             <div class="col-md-6 text-left">
-                <button type="button" class="btn btn-light info" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-trigger="hover" data-content="Welcome! This is a site designed to help you learn how to distinguish between consonants in the Korean alphabet. It can be difficult because some Korean consonants similar to English ones, yet not quite. Happy learning!">First time here?</button>
+                <button type="button" class="btn btn-light info" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-trigger="hover" data-content="Welcome! This is a site designed to help you learn how to distinguish between similar-sounding consonants in the Korean alphabet. Be careful because some Korean consonants similar to English ones, but not quite. Happy learning!">First time here?</button>
             </div>
             <div class="col-md-6 text-right">
                 <button class="btn btn-outline-primary my-2 my-sm-0" disabled><i class="material-icons">home</i></button>
@@ -58,9 +68,14 @@
         </nav>
 
         <div class="container">
-            <div class="row spaced">
-                <div class="col-md-12 text-center">
-                    Select which set of Korean consonants you would like to learn how to distinguish between.
+            <div class="row">
+                <div class="col-md-12 text-center" id="instructions">
+                    <div class="col-md-12 text-center font">
+                        Each of the following is a set of similar-sounding Korean consonants.
+                    </div>
+                    <div class="col-md-12 text-center font">
+                        Select one to learn to distinguish between.
+                    </div>
                 </div>
             </div>
         </div>

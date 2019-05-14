@@ -1,5 +1,5 @@
 function show_title(){
-    $('#title').append($('<a class="navbar-brand">Quiz Results: ' + info["slash"] + '</a>'))
+    $('#title').append($('<a class="navbar-brand font-title">Quiz Results: ' + info["slash"] + '</a>'))
 }
 
 function clear_answers(section){
@@ -42,15 +42,17 @@ function show_results(){
 
             var q_info = $('<div class="row small-spaced">')
             q_info.append($('<audio src="../static/audio/' + quiz[i].question + '" preload="auto"></audio>'))
+            q_info.append($('<div class="col-md-1"></div>'))
             q_info.append($('<div class="col-md-2 btn-wrapper"><button class="play-button"><i class="material-icons play-icon">play_arrow</i><div>'))
-            q_info.append($('<div class="col-md-3">Your answer: </div>'))
+            q_info.append($('<div class="col-md-2 font-thin red">Your answer: </div>'))
             if (quiz[i].userAnswer == null) {
-                q_info.append($('<div class="col-md-2">(blank)</div>'))
+                q_info.append($('<div class="col-md-1">--</div>'))
             } else {
-                q_info.append($('<div class="col-md-2">' + info["options"][quiz[i].userAnswer] + '</div>'))
+                q_info.append($('<div class="col-md-1">' + info["options"][quiz[i].userAnswer] + '</div>'))
             }
-            q_info.append($('<div class="col-md-3">Correct answer: </div>'))
-            q_info.append($('<div class="col-md-2">' + info["options"][quiz[i].correctAnswer] + '</div>'))
+            q_info.append($('<div class="col-md-3 font-thin green">Correct answer: </div>'))
+            q_info.append($('<div class="col-md-1">' + info["options"][quiz[i].correctAnswer] + '</div>'))
+            q_info.append($('<div class="col-md-2"></div>'))
             $("#results").append(q_info)
         }
 
@@ -67,16 +69,19 @@ function show_results(){
     }
 
     if (numCorrect != quiz.length) {
-        $("#results").prepend('<div class="large-spaced">Looks like you had the most trouble identifying ' + mostWrong + '</div>')
-        $("#results").prepend('<div class="large-spaced">Summary of mistakes:</div>')
+        $("#results").append($('<div class="large-spaced font-prof"><b>You had the most trouble identifying the <span class="mini-box">' + mostWrong + '</span> sound.</b></div>'))
+        $("#results").prepend($('<div class="col-md-12 text-left summary"><div class="col-md-3 text-center box font-thin silver">Summary of mistakes</div></div>'))
+        $("#results").prepend($('<hr>'))
     }
-    $("#results").prepend('<div class="large-spaced">You answered ' + numCorrect + ' out of ' + quiz.length + ' questions correctly.</div>')
+    $("#results").prepend($('<div class="large-spaced font-prof space">You answered <b id="num-correct">' + numCorrect + '</b> out of ' + quiz.length + ' questions correctly.</div>'))
     if (numCorrect === quiz.length) {
-        $("#results").prepend('<div class="large-spaced">Congratulations!</div>')
+        $("#num-correct").addClass("green")
+        $("#results").prepend($('<div class="large-spaced font-cursive">Congratulations!</div>'))
     } else if (numCorrect < quiz.length/2) {
-        $("#results").prepend('<div class="large-spaced">Needs more work...</div>')
+        $("#num-correct").addClass("red")
+        $("#results").prepend($('<div class="large-spaced font-cursive">Needs more work...</div>'))
     } else {
-        $("#results").prepend("<div class='large-spaced'>You're getting there</div>")
+        $("#results").prepend($("<div class='large-spaced font-cursive'>You're getting there</div>"))
     }
 }
 
